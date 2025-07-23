@@ -1,0 +1,24 @@
+[
+    {
+        "name": "qwen3_30b_a3b_fp8",
+        "start_script": "./qwen_scripts/qwen3_30b_a3b_fp8_server.sh",
+        "ready_pattern": "The server is fired up and ready to roll",
+        "health_check": "http://localhost:30000/health",
+        "timeout": 300,
+        "test_scripts": {
+            "gsm8k功能测试": "timeout 300 python3 /sgl-workspace/sglang/benchmark/gsm8k/bench_sglang.py --num-questions 2000 --parallel 20 --num-shots 8 --result-file qwen3_gsm8k_30b_a3_result.jsonl",
+            "性能测试": "./qwen_scripts/test_qwen3_30b_a3b_fp8.sh"
+        }
+    },
+    {
+        "name": "qwen3_235b_a22b_fp8",
+        "start_script": "./qwen_scripts/qwen3_235b_a22b_fp8_server.sh",
+        "ready_pattern": "The server is fired up and ready to roll",
+        "health_check": "http://localhost:30000/health",
+        "timeout": 300,
+        "test_scripts": {
+            "gsm8k功能测试":"timeout 300 python3 /sgl-workspace/sglang/benchmark/gsm8k/bench_sglang.py --num-questions 2000 --parallel 20 --num-shots 8 --result-file qwen3_gsm8k_result.jsonl",
+            "性能测试": "./qwen_scripts/test_qwen3_235b_a22b_fp8.sh"
+        }
+    }
+]
