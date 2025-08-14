@@ -7,4 +7,8 @@ python3 -m sglang.bench_serving --backend sglang \
   --random-input 4096 \
   --random-output 1 \
   --random-range-ratio 1 \
-  --num-prompts 1
+  --num-prompts 100 \
+  --output-file "result/qwen3_prefill.jsonl" \
+  --request-rate 5 \
+  --seed $(date +%s) \
+  --max-concurrency 8
